@@ -383,7 +383,7 @@ function getHomePage() {{
 
   const content = `
     <header>
-      <h1 class="blog-title">📝 Blog Saya</h1>
+      <h1 class="blog-title">📝 My Blog</h1>
       <p class="blog-subtitle">Berbagi pemikiran dan pengalaman</p>
     </header>
     ${{postsHtml}}
