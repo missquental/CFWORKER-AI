@@ -236,7 +236,6 @@ def generate_worker_script():
         post['excerpt'] = markdown.markdown(post['excerpt'])
 
     posts_json = json.dumps(st.session_state.posts, indent=2)
-    html_template = load_html_template()
     
     return f"""
 // Blog Worker untuk Cloudflare
