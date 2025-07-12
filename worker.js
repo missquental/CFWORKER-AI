@@ -29,7 +29,7 @@ const posts = [
 
 // Konfigurasi blog
 const BLOG_CONFIG = {
-  title: "Blog Saya",
+  title: "My Blog",
   subtitle: "Berbagi pemikiran dan pengalaman",
   description: "Blog pribadi yang membahas teknologi, tutorial, dan pengalaman sehari-hari",
   author: "Admin",
