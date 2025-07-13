@@ -249,170 +249,183 @@ const HTML_TEMPLATE = `
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{{{title}}}}</title>
-  <style>
-    * {{
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }}
-    body {{
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background-color: #f8f9fa;
-      color: #333;
-      line-height: 1.6;
-    }}
-    a {{
-      text-decoration: none;
-      color: inherit;
-    }}
-
-    /* Navbar */
-    .navbar {{
-      background: #ffffff;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      padding: 1rem 2rem;
-      margin-bottom: 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }}
-    .nav-logo {{
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #667eea;
-    }}
-    .nav-menu a {{
-      margin-left: 1.5rem;
-      color: #4a5568;
-      font-weight: 500;
-    }}
-    .nav-menu a:hover {{
-      color: #764ba2;
-    }}
-
-    .container {{
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 20px;
-    }}
-
-    header {{
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      text-align: center;
-      padding: 3rem 2rem;
-      border-radius: 15px;
-      margin-bottom: 2rem;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-    }}
-    .blog-title {{
-      font-size: 2.8rem;
-      font-weight: 700;
-    }}
-    .blog-subtitle {{
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
-    }}
-
-    .post-grid {{
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-    }}
-    .post-card {{
-      background: white;
-      border-radius: 12px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease;
-    }}
-    .post-card:hover {{
-      transform: translateY(-3px);
-    }}
-    .post-image {{
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-bottom: 1rem;
-    }}
-    .post-title {{
-      font-size: 1.4rem;
-      font-weight: 600;
-      color: #2d3748;
-      margin-bottom: 0.3rem;
-    }}
-    .post-meta {{
-      color: #718096;
-      font-size: 0.9rem;
-      margin-bottom: 0.7rem;
-    }}
-    .post-content {{
-      color: #4a5568;
-    }}
-    .post-link {{
-      display: inline-block;
-      margin-top: 1rem;
-      color: #667eea;
-      font-weight: 500;
-    }}
-    .post-link:hover {{
-      color: #764ba2;
-    }}
-
-    .post-detail {{
-      max-width: 900px;
-      margin: 0 auto;
-    }}
-    .back-link {{
-      display: inline-block;
-      margin-bottom: 1.5rem;
-      color: #667eea;
-      font-weight: 500;
-    }}
-    .back-link:hover {{
-      color: #764ba2;
-    }}
-
-    footer {{
-      text-align: center;
-      padding: 2rem;
-      color: #888;
-      font-size: 0.9rem;
-      margin-top: 3rem;
-    }}
-
-    @media (max-width: 768px) {{
-      .nav-menu a {{
-        margin-left: 1rem;
-      }}
-      .blog-title {{
-        font-size: 2rem;
-      }}
-    }}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{{{title}}}}</title>
+    <style>
+        * {{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }}
+        body {{
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }}
+        .container {{
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }}
+        header {{
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }}
+        .blog-title {{
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }}
+        .blog-subtitle {{
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }}
+        .post-card {{
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }}
+        .post-card:hover {{
+            transform: translateY(-2px);
+        }}
+        .post-title {{
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #2d3748;
+        }}
+        .post-meta {{
+            color: #718096;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }}
+        .post-content {{
+            color: #4a5568;
+            line-height: 1.7;
+        }}
+        .post-link {{
+            display: inline-block;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 1rem;
+        }}
+        .post-link:hover {{
+            color: #764ba2;
+        }}
+        .post-detail {{
+            max-width: 900px;
+        }}
+        .back-link {{
+            display: inline-block;
+            color: #667eea;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }}
+        .back-link:hover {{
+            color: #764ba2;
+        }}
+        @media (max-width: 768px) {{
+            .container {{
+                padding: 10px;
+            }}
+            .blog-title {{
+                font-size: 2rem;
+            }}
+            .post-card {{
+                padding: 1.5rem;
+            }}
+        }}
+    </style>
 </head>
 <body>
-  <nav class="navbar">
-    <div class="nav-logo">📝 BlogKu</div>
-    <div class="nav-menu">
-      <a href="/">Home</a>
-      <a href="/about">About</a>
-      <a href="/contact">Contact</a>
+    <div class="container">
+        {{{{content}}}}
     </div>
-  </nav>
-  <div class="container">
-    {{{{content}}}}
-  </div>
-  <footer>
-    © 2025 BlogKu. Dibuat dengan ❤️ oleh Cloudflare Workers
-  </footer>
 </body>
 </html>
 `;
+
+async function handleRequest(request) {{
+  const url = new URL(request.url);
+  const path = url.pathname;
+
+  if (path === '/') {{
+    return new Response(getHomePage(), {{
+      headers: {{ 'Content-Type': 'text/html' }}
+    }});
+  }}
+
+  if (path.startsWith('/post/')) {{
+    const postId = path.replace('/post/', '');
+    return new Response(getPostPage(postId), {{
+      headers: {{ 'Content-Type': 'text/html' }}
+    }});
+  }}
+
+  return new Response('404 Not Found', {{ status: 404 }});
+}}
+
+function getHomePage() {{
+  const postsHtml = posts.map(post => `
+    <div class="post-card">
+      <h2 class="post-title">${{post.title}}</h2>
+      <div class="post-meta">📅 ${{post.date}} | ✍️ ${{post.author}}</div>
+      <div class="post-content">${{post.excerpt}}</div>
+      <a href="/post/${{post.id}}" class="post-link">Baca selengkapnya →</a>
+    </div>
+  `).join('');
+
+  const content = `
+    <header>
+      <h1 class="blog-title">📝 My Blog</h1>
+      <p class="blog-subtitle">Berbagi pemikiran dan pengalaman</p>
+    </header>
+    ${{postsHtml}}
+  `;
+
+  return HTML_TEMPLATE.replace('{{{{title}}}}', 'Blog Saya').replace('{{{{content}}}}', content);
+}}
+
+function getPostPage(postId) {{
+  const post = posts.find(p => p.id === postId);
+  
+  if (!post) {{
+    return HTML_TEMPLATE.replace('{{{{title}}}}', '404 Not Found').replace('{{{{content}}}}', `
+      <header>
+        <h1 class="blog-title">404</h1>
+        <p class="blog-subtitle">Post tidak ditemukan</p>
+      </header>
+      <div class="post-card">
+        <a href="/" class="back-link">← Kembali ke beranda</a>
+      </div>
+    `);
+  }}
+
+  const content = `
+    <div class="post-detail">
+      <a href="/" class="back-link">← Kembali ke beranda</a>
+      <div class="post-card">
+        <h1 class="post-title">${{post.title}}</h1>
+        <div class="post-meta">📅 ${{post.date}} | ✍️ ${{post.author}}</div>
+        <div class="post-content">${{post.content}}</div>
+      </div>
+    </div>
+  `;
+
+  return HTML_TEMPLATE.replace('{{{{title}}}}', post.title).replace('{{{{content}}}}', content);
+}}
 """
 
 def main_dashboard():
